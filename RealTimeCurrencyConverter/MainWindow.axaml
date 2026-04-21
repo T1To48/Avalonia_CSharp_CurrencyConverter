@@ -1,0 +1,63 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="800"
+        x:Class="RealTimeCurrencyConverter.MainWindow"
+        Title="RealTimeCurrencyConverter"
+        Width="800"
+        Height="600"
+        >
+    <StackPanel Background="#60945f"  >
+        <!-- Program Title with Custom Download FONT wrapped in a border with neumorphism design -->
+        <Border  HorizontalAlignment="Center" Margin="5, 50, 5, 5"  CornerRadius="10" BoxShadow="inset 6 6 12 0 #4e7a4d, inset -6 -6 12 0 #79b378" Width="700" >
+            <TextBlock
+            Margin="10"
+            FontSize="50"
+            Text="Currency Converter"
+            Foreground="#000000"
+            LetterSpacing="2"
+            FontWeight="ExtraBold"
+            HorizontalAlignment="Center"
+            />
+        </Border>
+        <Border CornerRadius="20" Width="550" BoxShadow="inset 6 6 12 0 #4e7a4d, inset -6 -6 12 0 #79b378" Height="350"  Margin="10" Padding="10">
+
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" Orientation="Vertical" Spacing="10" >
+
+                <StackPanel Orientation="Horizontal" >
+                    <TextBlock Width="250" VerticalAlignment="Center"  Name="SourceUnit" FontSize="25"  >Amount in $USD :</TextBlock>
+                    <TextBox x:Name="USDValue" TextChanged="Input_OnChange_FilterNumbers" Width="100"    VerticalAlignment="Center" CornerRadius="10" BorderThickness="2" BorderBrush="#000000" Background="Transparent" Padding="10" FontSize="18" Text="0"/>
+                </StackPanel>
+
+                <StackPanel>
+                    <CheckBox Name="RateChkBx" IsCheckedChanged="ToggleExchangeRate" FontWeight="Bold"  FontSize="12" Content="Use Real Time Exchange Rate"  IsChecked="False"/>
+
+                    <StackPanel Orientation="Horizontal" >
+                        <TextBlock Width="250" VerticalAlignment="Center"  FontSize="25"  >Exchange Rate :</TextBlock>
+                        <TextBox x:Name="UserRate" TextChanged="Input_OnChange_FilterNumbers" Width="100" VerticalAlignment="Center" CornerRadius="10" BorderThickness="2" BorderBrush="#000000" Background="Transparent" Padding="10" FontSize="18" Text="0"/>
+                    </StackPanel>
+                </StackPanel>
+                <Button  Foreground="#60945f" Background="#000000"
+                         CornerRadius="15" LetterSpacing="2"
+                         FontWeight="900"  Padding="25 10" FontSize="25" HorizontalAlignment="Center"
+                         Margin="5"
+                         Click="OnClick_convertToILS"
+                         >
+                    Convert
+                </Button>
+                <StackPanel Margin="5" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+                    <TextBlock   FontSize="25"  >Amount in ₪ILS :</TextBlock>
+                    <Border  CornerRadius="10" Width="200" Padding="10" BoxShadow="inset 20 20 60 0 #527e51,inset -20 -20 60 0 #6eaa6d">
+                        <TextBlock Name="ILSValue"  HorizontalAlignment="Center"    FontSize="40" LetterSpacing="1" >0₪</TextBlock>
+                    </Border>
+
+                </StackPanel>
+
+            </StackPanel>
+        </Border>
+
+    </StackPanel>
+
+</Window>
