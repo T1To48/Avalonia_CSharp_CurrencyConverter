@@ -1,3 +1,5 @@
+<a href="https://usd-ils-change.netlify.app/">Click Here To Download The .EXE (READY-TO-USE App)</a>
+
 # Real-Time Currency Converter
 
 A modern and intuitive currency conversion application built with **Avalonia UI** and **C#**.
